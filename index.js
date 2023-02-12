@@ -24,14 +24,17 @@ mongoose.set('strictQuery', false) // делаем чтобы не выскак�
 //регистрируем наши роуты
 app.use('/api/post', postRoutes) // роут обращения для создания постаa
 
+//Тестовый запрос для проверки
+app.get('/', (req, res) => {
+   res.send('Hello World')
+})
+
 mongoose
    .connect(
       `mongodb+srv://${DB_USER}:${DB_PASSWORD}@cluster0.hnznksk.mongodb.net/${DB_NAME}?retryWrites=true&w=majority`,
       {
          useNewUrlParser: true,
          useUnifiedTopology: true,
-         //     useCreateIndex: true,
-         //     useFindAndModify: true,
       }
    )
    .then(() => {
