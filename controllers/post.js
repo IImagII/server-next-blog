@@ -3,7 +3,6 @@ import Post from '../models/Post.js'
 //Create Post
 export const createPost = async (req, res) => {
    try {
-      console.log('req.body :>> ', req.body)
       const { title, text, imgUrl } = req.body // получаем из нашего клиента
 
       //формируем наш новыцй пост
